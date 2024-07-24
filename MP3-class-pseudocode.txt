@@ -1,0 +1,39 @@
+** Define a class named MP3 that inherits from Gadget **
+Class MP3 extends Gadget
+    // Private property to store the memory of the MP3 player
+    Private Property:
+        memory as Double
+
+    // Constructor to initialize the MP3 object along with its superclass properties
+    Constructor(model as String, price as Double, weight as Integer, size as String, memory as Double)
+        Call superclass constructor with model, price, weight, and size
+        Set this.memory to memory
+
+    // Method to get the available memory
+    getMemory() Method returns Double
+        Return memory
+
+    // Method to increase memory if it is not enough to accommodate a new download
+    Method increaseMemory(amount as Double)
+        If memory < amount
+            Calculate sufficientMemory as amount - memory
+            Increase memory by sufficientMemory
+        Else
+            Print "Your memory is enough to download files!"
+
+    // Method to download music if there is enough memory available
+    Method downloadMusic(amount as Double)
+        If memory > amount
+            Decrease memory by amount
+            Print "Starting to download your files, please wait!"
+            Print "File successfully downloaded!"
+        Else
+            Print "You do not have available memory to download the desired file"
+            Print "Please increase the amount of memory to download the desired file"
+
+    // Enhanced display method to show additional details specific to MP3
+    Override Method display()
+        Call display method of superclass
+        Print "Available memory: " + memory + "MB"
+
+

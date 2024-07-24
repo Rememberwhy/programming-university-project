@@ -1,0 +1,38 @@
+** Define a class named Gadget **
+Class Gadget
+    // Gadget class would need 4 fields
+    Fields:
+        model as String
+        price as Double
+        weight as Integer
+        size as String
+
+    // Constructor to initialize the Gadget object with model, price, weight, and size
+    Constructor(model as String, price as Double, weight as Integer, size as String)
+        Set this.model to model
+        Set this.price to price
+        Set this.weight to weight
+        Set this.size to size
+
+    // Method to get the model of the gadget
+   getModel()  Method  returns String
+        Return model
+
+    // Method to get the price of the gadget
+    getPrice() Method returns Double
+        Return price
+
+    // Method to get the weight of the gadget
+    getWeight() Method returns Integer
+        Return weight
+
+    // Method to get the size of the gadget
+    getSize() Method returns String
+        Return size
+
+    // Method to display the details of the gadget
+    display() Method
+        Print "Model of your choice: " followed by model
+        Print "Price of your desired model: £ " followed by price
+        Print "Weight of your choice: " followed by weight
+        Print "Size of your choice: " followed by size

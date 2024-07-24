@@ -1,0 +1,39 @@
+** Define a class named Mobile that inherits from Gadget **
+Class Mobile extends Gadget
+    // Private property to store the remaining calling credit
+    Private Property:
+        callingCreditRemaining as Integer
+
+    // Constructor to initialize the Mobile object along with its superclass properties
+    Constructor(model as String, price as Double, weight as Integer, size as String, callingCreditRemaining as Integer)
+        Call superclass constructor with model, price, weight, and size
+        Set this.callingCreditRemaining to callingCreditRemaining
+
+    // Method to get the remaining calling credit
+    getCredit() Method returns Integer
+        Return callingCreditRemaining
+
+    // Method to add credit if the amount is positive
+    Method insertCredit(amount as Integer)
+        If amount > 0
+            Increase callingCreditRemaining by amount
+        Else
+            Print "Please add positive amount of credit!"
+
+    // Method to make a phone call, using the calling credit
+    Method makePhoneCall(number as Integer, durationOfCall as Integer)
+        If callingCreditRemaining > durationOfCall
+            Print "Provided number above is: " + number
+            Print "Provided duration of call is: " + durationOfCall
+            Decrease callingCreditRemaining by durationOfCall
+        Else
+            Print "There is insufficient credit in the system, Please add required amount to perform phone call"
+            Calculate requiredAmount as durationOfCall - callingCreditRemaining
+            Print "Required amount of credits to be added: " + requiredAmount
+
+    // Enhanced display method to show additional details specific to Mobile
+    Override Method display()
+        Call display method of superclass
+        Print "Remaining calling credit: " + callingCreditRemaining + " Minutes"
+
+
